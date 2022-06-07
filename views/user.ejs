@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title><%=name%> HealthDesk</title>
+    </head>
+    <body style="margin: 0;">
+        <nav style="background-color: darkgray;" class="navbar">
+            <div class="navbar-1">
+                <h1 style="margin: 0; padding: 25px 20px;" class="gk1">My HealthDesk</h1>
+            </div>
+        </nav>
+        <section id="home" class="home-1" style="padding-left: 10px; background-color: aquamarine; border: solid 2px black  ;">
+            <div class="home-1-1">
+                <p><b>Name of Patient</b> : <%=name%></p>
+                <p><b>Blood Group</b> : <%=blood%></p>
+                <p><b>Contact</b> : <%=contact%></p>
+                <p><b>Date of Birth</b> : <%=dob%></p>
+                <p><b>Address</b> : <%=address%></p>
+            </div>
+        </section>
+        <h1 style="padding-left: 10px;">Test Reports :</h1>
+        <ul>
+            <% addlists.forEach(function(elements){ %>
+                <li> <%= elements%></li>
+            <% }) %>
+        </ul>
+    </body>
+</html>

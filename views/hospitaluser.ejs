@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title><%=name%> HealthDesk</title>
+    </head>
+    <body style="margin: 0;">
+        <nav style="background-color: darkgray;" class="navbar">
+            <div class="navbar-1">
+                <h1 style="margin: 0; padding: 25px 20px;" class="gk1">My HealthDesk</h1>
+            </div>
+        </nav>
+        <section id="home" class="home-1" style="padding-left: 10px; background-color: aquamarine; border: solid 2px black  ;">
+            <div class="home-1-1">
+                <p><b>Name of Patient</b> : <%=name%></p>
+                <p><b>Blood Group</b> : <%=blood%></p>
+                <p><b>Contact</b> : <%=contact%></p>
+                <p><b>Date of Birth</b> : <%=dob%></p>
+                <p><b>Address</b> : <%=address%></p>
+            </div>
+        </section>
+       
+            <form action="/Checkdetail" method="post">
+                <div style="padding:20px;">
+                    <label for="1"><b>Date : </b></label>
+                    <input style="margin-left: 50px; width: 100px;" type="date" class="1" name="gk1">
+                </div>
+                <div style="padding:20px;">
+                    <label for="1"><b>Test : </b></label>
+                    <input style="margin-left: 55px; width: 500px;" type="text" class="2" name="gk2">
+                </div>
+                <div style="padding:20px;">
+                    <label for="1"><b>Status : </b></label>
+                    <input style="margin-left: 40px; width: 500px;" type="text" class="3" name="gk3"> 
+                </div>
+                <div style="padding:20px;">
+                    <label for="1"><b>Contact   : </b></label>
+                    <input style="margin-left: 30px; width: 500px;" type="number" class="4" name="gk4">
+                </div>
+                <div style="padding:20px; display: flex; justify-content: flex-start;">
+                    <button type="submit" name="but">Add</button>
+                </div>
+            </form>
+    </body>
+</html>

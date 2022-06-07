@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title><%=name%> HealthDesk</title>
+    </head>
+    <body style="margin: 0;">
+        <nav style="background-color: darkgray;" class="navbar">
+            <div class="navbar-1">
+                <h1 style="margin: 0; padding: 25px 20px;" class="gk1">My HealthDesk</h1>
+            </div>
+        </nav>
+        <section id="home" class="home-1" style="padding-left: 10px; background-color: aquamarine; border: solid 2px black  ;">
+            <h1><b>Hospital Details</b></h1>
+            <div class="home-1-1">
+                <p><b>Registration ID</b> : <%=rid%></p>
+                <p><b>Name of Hospital</b> : <%=name%></p>
+                <p><b>Email Address</b> : <%=email%></p>
+                <p><b>Contact </b> : <%=contact%></p>
+                <p><b>Address</b> : <%=address%></p>
+            </div>
+        </section>
+        <div style="display: inline-flex; justify-content: flex-start; width: 100%; padding-left: 10px;">
+        <form style="width: 50%;" action="/Userdatabase" method="post">
+            <h1>New Patient</h1>
+            <div class="contact-5">
+                <h3 style="font-weight:600; ">NAME : </h3>
+                <input type="text" placeholder="Enter Name" style="width: 350px;" name="name">
+            </div>
+            <div class="contact-5">
+                <h3 style="font-weight:600; ">BLOOD GROUP : </h3>
+                <input type="text" placeholder="Blood Group" style="width: 350px;" name="bloodgrp">
+            </div>
+            <div class="contact-5">
+                <h3 style="font-weight:600; ">ADDRESS : </h3>
+                <input type="text" placeholder="Enter Address" style="width: 350px;" name="address">
+            </div>
+            <div class="contact-5">
+                <h3 style="font-weight:600; ">Date of Birth : </h3>
+                <input type="date" placeholder="Enter Address" style="width: 350px;" name="dob">
+            </div>
+            <div class="contact-5">
+                <h3 style="font-weight:600;">CONTACT : </h3>
+                <input type="number" placeholder="Enter Mobile Number" style="width: 350px;" name="contactno">
+            </div>
+            <button type="submit" style="margin-top: 20px;" >Sign Up</button>
+        </form>
+        <form action="/userdb" method="post">
+            <h1>Search Patient</h1>
+            <div>
+                <h3>CONTACT : </h3>
+            <input type="search" placeholder="Enter Mobile Number" name="patientno" style="width: 350px;">
+            </div>
+            <button style="margin-top: 20px;" type="submit">Search</button>
+        </form>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width,initial-scale=1"/>
+        <meta name="theme-color" content="#000000"/>
+        <meta name="description" content="Web app to maintain health records"/>
+        <title>My HealthDesk</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@300&display=swap" rel="stylesheet">
+        <link href="gks.css" rel="stylesheet">
+    </head>
+    <body>
+        <nav class="navbar">
+            <div class="navbar-1">
+                <h1 class="gk1">My HealthDesk</h1>
+                <ul class="navbarcomp">
+                    <li class="h">
+                        <a class="navbarcomp-1" href="#home">Home</a>
+                    </li>
+                    <li class="h">
+                        <a class="navbarcomp-1" href="#about">About</a>
+                    </li>
+                    <li class="h">
+                        <a class="navbarcomp-1"href="#contact">Register</a>
+                </li>   
+                </ul>
+            </div>
+        </nav>
+        <section id="home" class="home-1">
+            <div class="home-1-1">
+                <div class="home-2">
+                    <h1 style="font-size: 3.5rem; font-weight:bolder; color: gb(45, 45, 58); margin-bottom: 0px;"><b>My HealthDesk</b></h1>
+                    <div style="width: 50%;">
+                        <h3 class="home-3">One stop solution for your health records</h3>
+                    </div>
+                    <div style="width: 70%; margin-bottom: 20px;">
+                        <p style="font-size: 1rem; color: rgb(33, 33, 33); font-weight: 500;"><b>Our aim is to develop a solution for nationwide health information network that brings patient and hospitals to a single platform.</b></p>
+                    </div>
+                    <div style="width: 75%; display: flex;">
+                        <div style="width: 50%;">
+                            <a class="home-4" href="/userlogin.html">User</a>
+                        </div>
+                        <div style="width: 50%;">
+                            <a class="home-5" href="/hospitallogin.html">Hospital</a>
+                        </div>
+                    </div>
+                </div>
+                <img src="https://healthdock.herokuapp.com/static/media/HeroImage.40c4282c.png" width="80%" height="80%">
+            </div>
+        </section>
+        <section id="about" class="about-1">
+            <div>
+                <div style="width: 100%; padding: 30px;">
+                    <h1 class="about-2">Who are we?</h1>
+                    <p class="about-3">We provide digital record of health information such as medical history, diagnoses, medications, immunization dates, and allergies. Making the health information available, reducing duplication of tests, reducing delays in treatment, and patients well informed to take better decisions.</p>
+                </div>
+                <div class="about-4">
+                    <div class="about-4-1">
+                        <h1 style="font-size: 2rem; color: rgb(73, 107, 242); margin-bottom: 30px;">
+                            <u style="text-decoration-color:rgb(45, 214, 193); text-decoration-thickness: 5px; text-underline-offset: 0.2em;">Our Vision</u>
+                        </h1>
+                        <div style="width: 75%;">
+                            <p style="font-weight: 600; color:rgb(33, 33, 33); font-size: 1.2rem">Our vision is to enhance Nation's Health IT Infrastructure and strengthen the relationship between patients and clinicians.</p>
+                        </div>
+                    </div>
+                    <div class="about-4-2">
+                        <h1 style="font-size: 2rem; color: rgb(73, 107, 242); margin-bottom: 30px;">
+                            <u style="text-decoration-color:rgb(45, 214, 193); text-decoration-thickness: 5px; text-underline-offset: 0.2em;">Key Features</u>
+                        </h1>
+                        <div style="width: 75%;">
+                            <ul style="margin-left: 20px">
+                                <li>
+                                    <p style="font-weight: 600; color:rgb(33, 33, 33); font-size: 1.2rem">Easy sign up / sign in</p>
+                                </li>
+                                <li>
+                                    <p style="font-weight: 600; color:rgb(33, 33, 33); font-size: 1.2rem">Digitally secure Health Record</p>
+                                </li>
+                                <li>
+                                    <p style="font-weight: 600; color:rgb(33, 33, 33); font-size: 1.2rem">Efficiently manage your Patient's health data</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="contact" class="contact-1">
+            <div class="contact-2">
+                <img src="https://healthdock.herokuapp.com/static/media/ContactImage.f08dbd19.png" width="40%">
+                <div class="contact-3">
+                    <p style="font-weight:800; width: 100%; color: rgb(45, 45, 58); font-size: 3.5rem;">REGISTER HERE!!</p>
+                    <div style="width: 100%;">
+                        <p class="contact-4">If Hospital is not registered!!!</p>
+                    </div> 
+                    <form style="width: 100%;" action="/" method="post">
+                        <div class="contact-5">
+                            <h3 style="font-weight:600; color:rgb(45, 214, 193);">NAME OF HOSPITAL</h3>
+                            <input type="text" placeholder="Enter Name of your Hospital" class="contact-6" name="name">
+                        </div>
+                        <div class="contact-5">
+                            <h3 style="font-weight:600; color:rgb(45, 214, 193);">EMAIL ADDRESS</h3>
+                            <input type="email" placeholder="Enter email" class="contact-6" name="email">
+                        </div>
+                        <div class="contact-5">
+                            <h3 style="font-weight:600; color:rgb(45, 214, 193);">ADDRESS</h3>
+                            <input type="text" placeholder="Enter address" class="contact-6" name="address">
+                        </div>
+                        <div class="contact-5">
+                            <h3 style="font-weight:600; color:rgb(45, 214, 193);">REGISTRATION ID</h3>
+                            <input type="text" placeholder="Enter registration id" class="contact-6" name="id">
+                        </div>
+                        <div class="contact-5">
+                            <h3 style="font-weight:600; color:rgb(45, 214, 193);">CONTACT</h3>
+                            <input type="number" placeholder="Enter contact" class="contact-6" name="contactno">
+                        </div>
+                        <div class="contact-5">
+                            <h3 style="font-weight:600; color:rgb(45, 214, 193);">SET PASSWORD</h3>
+                            <input type="password" placeholder="Enter password" class="contact-6" name="password">
+                        </div>
+                        <button type="submit" class="contact-8">Sign Up</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <div class="footer">
+            <div>
+                <div style="width: 220px;">
+                    <h1 style = "font-size: 1.5rem; font-weight:bolder; color: gb(45, 45, 58); margin-bottom: 0px;"><b>My HealthDesk</b></h1>
+                </div>
+                <p style="font-weight: 600; color:rgb(49, 49, 50); font-size:0.8rem">....Made By Gautam Kumawat....</p>
+            </div>
+        </div>
+    </body>
+</html>
