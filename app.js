@@ -145,7 +145,9 @@ app.post("/hospitallogin",function(req,res)
 app.post("/userlogin",function(req,res)
 {
     const usernumber = req.body.uid;
-    const arr = [];
+    const arr1 = [];
+    const arr2 = [];
+    const arr3 = [];
     Checkdetail.find({},function(err,founditems)
     {
         if(founditems.length === 0)
@@ -163,7 +165,9 @@ app.post("/userlogin",function(req,res)
         {
             founditems.forEach(function(elem)
             {
-                arr.push(elem.currdate+" : "+"{Test : "+elem.test+"}-------"+"{Result : "+elem.result+"}");
+                arr1.push(elem.currdate);
+                arr2.push(elem.test);
+                arr3.push(elem.result);
             });
         }
     });
@@ -183,7 +187,9 @@ app.post("/userlogin",function(req,res)
                         address: element.address,
                         dob: element.birth,
                         contact: element.contact,
-                        addlists: arr
+                        addlists1: arr1,
+                        addlists2: arr2,
+                        addlists3: arr3
                     });
                 }
                 else 

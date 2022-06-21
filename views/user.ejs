@@ -19,10 +19,25 @@
             </div>
         </section>
         <h1 style="padding-left: 10px;">Test Reports :</h1>
-        <ul>
-            <% addlists.forEach(function(elements){ %>
-                <li> <%= elements%></li>
-            <% }) %>
-        </ul>
+        <div style="display: flex;">
+            <div style="padding-left : 20px;">
+                <h2>Date/Time</h2>
+                <% addlists1.forEach(function(elements){ %>
+                    <p> <%= elements%></p>
+                <% }) %>
+            </div>
+            <div style="padding-left : 20px;">
+                <h2>Test</h2>
+                <% addlists2.forEach(function(elements){ %>
+                    <p> <%= elements%></p>
+                <% }) %>
+            </div>
+            <div style="padding-left : 20px;">
+                <h2>Status</h2>
+                <% addlists3.forEach(function(elements){ %>
+                    <p> <%= elements%></p>
+                <% }) %>
+            </div>
+        </div>
     </body>
 </html>
