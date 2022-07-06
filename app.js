@@ -7,7 +7,7 @@ const e = require("express");
 
 const app = express();
 app.set('view engine', 'ejs');
-mongoose.connect("mongodb://localhost:27017/myhealthdeskDB");
+mongoose.connect("mongodb+srv://admin-gautam:gautam11@cluster0.tyokg.mongodb.net/myhealthdeskDB");
 
 
 app.use(bodyParser.urlencoded({extended:true}));
