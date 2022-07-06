@@ -118,15 +118,17 @@ app.post("/hospitallogin",function(req,res)
 {
     const registrationid = req.body.rid;
     const password = req.body.hpassword;
-    HealthDesk.find(function(err,items){
+    HealthDesk.find({},function(err,items){
         if(err)
         console.log(err);
         else 
         {
+            var y = 0;
             items.forEach(function(element)
             {
-                if(element.registration === registrationid && element.password == password)
+                if(element.registration === registrationid && element.password === password)
                 {
+                    y++;
                     res.render("main",{
                         name: element.name,
                         email: element.email,
@@ -135,9 +137,11 @@ app.post("/hospitallogin",function(req,res)
                         address: element.address
                     });
                 }
-                else 
-                 res.send("invalid password");
             });
+            if(y == 0)
+            {
+                res.send("Invalid Username or Password");
+            }
         }
     }); 
 });
@@ -150,67 +154,68 @@ app.post("/userlogin",function(req,res)
     const arr3 = [];
     Checkdetail.find({},function(err,founditems)
     {
-        if(founditems.length === 0)
+        if(err)
         {
-            Item.insertMany(arr,function(err)
-            {
-                if(err)
-                    console.log(error);
-                else 
-                    console.log("Successfully saved..");
-            });
-            res.redirect("/userlogin");
+            console.log(err);
         }
         else 
         {
             founditems.forEach(function(elem)
             {
-                arr1.push(elem.currdate);
-                arr2.push(elem.test);
-                arr3.push(elem.result);
+                if(elem.cont == usernumber)
+                {
+                    arr1.push(elem.currdate);
+                    arr2.push(elem.test);
+                    arr3.push(elem.result);
+                }
             });
+            Userdatabase.find({},function(err,items){
+                if(err)
+                console.log(err);
+                else 
+                {
+                    var u = 0;
+                    items.forEach(function(element)
+                    {
+                        if(element.contact === usernumber)
+                        {
+                            u++;
+                            res.render("user",{
+                                name: element.name,
+                                blood: element.blood,
+                                address: element.address,
+                                dob: element.birth,
+                                contact: element.contact,
+                                addlists1: arr1,
+                                addlists2: arr2,
+                                addlists3: arr3
+                            });
+                        }
+                    });
+                    if(u == 0)
+                    {
+                        res.send("Invalid Username or Password");
+                    }
+                }
+            }); 
         }
     });
-
-    Userdatabase.find(function(err,items){
-        if(err)
-        console.log(err);
-        else 
-        {
-            items.forEach(function(element)
-            {
-                if(element.contact === usernumber)
-                {
-                    res.render("user",{
-                        name: element.name,
-                        blood: element.blood,
-                        address: element.address,
-                        dob: element.birth,
-                        contact: element.contact,
-                        addlists1: arr1,
-                        addlists2: arr2,
-                        addlists3: arr3
-                    });
-                }
-                else 
-                 res.send("invalid password");
-            });
-        }
-    }); 
 });
 
 app.post("/Userdb",function(req,res)
 {
     const phone = req.body.patientno;
-    Userdatabase.find(function(err,items1){
+    Userdatabase.find({},function(err,items1){
         if(err)
         console.log(err);
         else 
         {
+            var g = 0;
             items1.forEach(function(element)
             {
                 if(element.contact === phone)
                 {
+                    g++;
                     res.render("hospitaluser",{
                         name: element.name,
                         blood: element.blood,
@@ -218,10 +223,13 @@ app.post("/Userdb",function(req,res)
                         dob: element.birth,
                         contact: element.contact    
                     }); 
+                    
                 }
-                else
-                return res.send("plzz do register first....")
             });
+            if(g == 0)
+            {
+                res.send("plzz do register first...");
+            }
         }
     });
 });
