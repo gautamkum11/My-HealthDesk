@@ -234,8 +234,12 @@ app.post("/Userdb",function(req,res)
     });
 });
 
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 3000;
+}
 
-app.listen(3000,function(req,res)
+app.listen(port,function(req,res)
 {
     console.log("My HealthDesk Server started...")
 });
