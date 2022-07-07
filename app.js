@@ -1,5 +1,6 @@
 const express = require("express");
 const bodyParser = require("body-parser");
+require('dotenv').config()
 const ejs = require("ejs");
 const mongoose = require("mongoose");
 const { urlencoded } = require("body-parser");
@@ -7,7 +8,8 @@ const e = require("express");
 
 const app = express();
 app.set('view engine', 'ejs');
-mongoose.connect("mongodb+srv://admin-gautam:gautam11@cluster0.tyokg.mongodb.net/myhealthdeskDB");
+const b = process.env.mongopassword
+mongoose.connect("mongodb+srv://admin-gautam:"+b+"@cluster0.tyokg.mongodb.net/myhealthdeskDB");
 
 
 app.use(bodyParser.urlencoded({extended:true}));
